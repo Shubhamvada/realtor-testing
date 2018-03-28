@@ -15,7 +15,7 @@ public class DetailPage {
         PageFactory.initElements(browser,this);
     }
 
-    @FindBy(how= How.XPATH, using="//div[contains(@class,'header-price')]//span[contains(@itemprop,'price')]\"")
+    @FindBy(how= How.XPATH, using="//div[contains(@class,'header-price')]//span[contains(@itemprop,'price')]")
     public WebElement homePriceDetailPage;
 
 }
