@@ -14,7 +14,9 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import page.DetailPage;
+import page.HomePage;
 import page.SearchPage;
+import util.BrowserInit;
 
 public class ValidatePriceOnTwoPages {
 
@@ -24,9 +26,20 @@ public class ValidatePriceOnTwoPages {
     static String costSearchPage;
     static String costDetailsPage;
 
+    public ValidatePriceOnTwoPages(BrowserInit browser){
+
+        this.driver=browser;
+        homePage=new HomePage(browser);
+        searchPage=new SearchPage(browser);
+
+    }
+
     @Given("^User click on second search$")
     public void userClickOnSecondSearch() throws Throwable {
 
+        homePage.navigateUrl();
+        homePage.inputSearchBox.sendKeys("Morgantown,WV");
+        homePage.inputSearchBox.sendKeys(Keys.ENTER);
         costSearchPage=searchPage.homePriceSearchPage.getText();
         JavascriptExecutor js=new (JavascriptExecutor)driver;
         js.executeScript("argument[0].click",searchPage.homeImageLink);
