@@ -19,7 +19,7 @@ public class SearchPage {
     @FindBy(how= How.CLASS_NAME, using="search-result-count")
     public WebElement spanHomeCount;
 
-    @FindBy(how= How.XPATH, using="//ul[contains(@class,'srp-list-marginless list-unstyled')]/li[2]//span[contains(@class,'data-price')]")
+    @FindBy(how= How.XPATH, using="//div[contains(@id,'srp-list')]//li[2]//span[contains(@class,'data-price-display')]")
     public WebElement homePriceSearchPage;
 
     @FindBy(how= How.XPATH, using="//div[contains(@id,'srp-list')]//li[2]//div[contains(@class,'srp-item-address ellipsis')/a")
