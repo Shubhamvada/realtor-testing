@@ -43,12 +43,8 @@ public class BrowserInit extends EventFiringWebDriver {
         }
         
         BROWSER.manage().deleteAllCookies();
-        BROWSER.manage().windows().maximize();
 
     }
 
-     @AfterClass
-     {
-         BROWSER.close();
-     }
+
 }
